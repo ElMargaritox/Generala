@@ -11,6 +11,8 @@ function Winner() {
 
 function sound(){
     musica.volume = 0.1;
+    musica.autoplay = "true";
+    musica.load();
 }
 
 function nosound(){

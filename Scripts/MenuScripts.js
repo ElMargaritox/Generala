@@ -16,5 +16,12 @@ function Limpiar(){
 }
 
 
+function MostrarWelcome(){
+    var myModal = new bootstrap.Modal(document.getElementById('welcome'), {
+        keyboard: false
+      })
+        myModal.show();  
+}
+
 
 

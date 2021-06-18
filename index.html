@@ -45,8 +45,12 @@
 
     
   </head>
-  <body onload="sound();">
-    <audio id="fondo" autostart="true" src="Sound/fondo.wav" autoplay></audio>
+  <body onload="MostrarWelcome();">
+    
+
+    <audio src="Sound/fondo.ogg" id="fondo"  type="audio/mpeg" preload="preload">
+    </audio>
+
     <audio id="winner" src="Sound/Winner.wav" autostart="false"></audio>
     <audio id="button_click" src="Sound/select.wav" autostart="false"></audio>
 
@@ -412,6 +416,23 @@ sea la generala de 1 o de 6, vale 60 puntos.<br>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="welcome" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¡Bienvenido!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="winner">Esta pagina es un trabajo para la <b>Universidad</b> <br class="text-right"> Diviertete :)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="sound();" data-bs-dismiss="modal">Jugar</button>
         </div>
       </div>
     </div>

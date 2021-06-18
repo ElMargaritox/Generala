@@ -12,8 +12,12 @@ function ShowPuntos(){
     var temp = document.getElementById('points');
     temp.innerText = `${Puntos} Puntos`;
     
-    GuardarPuntos();
+   
 
+}
+
+function SavePuntos(){
+    GuardarPuntos();
 }
 
 function PasarDeTurno(){

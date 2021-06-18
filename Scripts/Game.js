@@ -209,7 +209,9 @@ function TerminarTurno(){
                   })
                     myModal.show();  
             }else{
+                SavePuntos();
                 PasarDeTurno();
+
                 addPlayersToTable();
                 TiradasActuales = 3; MostrarDadosDisponibles();
             }
