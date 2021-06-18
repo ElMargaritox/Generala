@@ -1,0 +1,424 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <meta http-equiv="refresh" content="60">
+    <title>Generala</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+<script src="https://kit.fontawesome.com/a98dce3858.js" crossorigin="anonymous"></script>
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body onload="sound();">
+    <audio id="fondo" src="Sound/fondo.wav" autoplay></audio>
+    <audio id="winner" src="Sound/Winner.wav" autostart="false"></audio>
+    <audio id="button_click" src="Sound/select.wav" autostart="false"></audio>
+
+
+
+    <script src="Scripts/MenuScripts.js"></script>
+    <script src="Scripts/Game.js"></script>
+    <script src="Scripts/Timer.js"></script>
+    <script src="Scripts/Player.js"></script>
+    <script src="Scripts/Tables.js"></script>
+    <script src="Sound/ScriptAudio.js"></script>
+    <div class="container-lg">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="Lib/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+
+<main id="app">
+    
+  
+    
+  <div class="container py-4" id="content-wrap">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <img width="55" height="55" class="img-thumbnail" src="https://cdn.discordapp.com/attachments/829117580098404452/854817100781584384/Descargar-juego-de-Generala-gratis-removebg-preview.png"/>
+        <span class="container-fluid"><h2>Generala</h2></span>
+      </a>
+    </header>
+
+    <div id="mesa" style="display:none !important">
+
+        <table class="table table-bordered table-hover ">
+            <tr>
+              <th>Nombre</th>
+              <th>Puntos</th>
+              <th>Juego</th>
+          
+              
+            </tr>
+            <tbody id="tablita">
+
+            </tbody>
+            
+          </table>
+
+
+
+          <div class="container-lg bg-info">
+            
+            <div class="row justify-content-center">
+
+                <div class="col-2">
+                    <img  height="100" width="100" class="img-fluid" src="Dados/dado6.png" name="dado1">
+                </div>
+                <div class="col-2">
+                    <img  height="100" width="100" class="img-fluid" src="Dados/dado6.png" name="dado2">
+                </div>
+                <div class="col-2">
+                    <img height="100" width="100" class="img-fluid" src="Dados/dado6.png" name="dado3">
+                </div>
+                <div class="col-2">
+                    <img height="100" width="100" class="img-fluid" src="Dados/dado6.png" name="dado4">
+                </div>
+                <div class="col-2">
+                    <img height="100" width="100" class="img-fluid" src="Dados/dado6.png" name="dado5">
+                </div>
+            </div>
+
+          </div>
+
+          <div class="row justify-content-center">
+
+            <div class="col-3">
+                <form style="margin-top: 20px;">
+                    <button type="button"  id="BotonTirarDados" style="margin: 0 auto !important; display:block;" class="btn-danger center" onClick="TirarDados();">Lanzar Dados(3)</button>
+                    </form>
+            </div>
+            <div class="col-3">
+                <form style="margin-top: 20px;">
+                    <button type="button"  id="BotonTerminarTurno" style="margin: 0 auto !important; display:block;" class="btn-success center" onClick="TerminarTurno();">Terminar Turno</button>
+                    </form>
+            </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-4">
+                <p class="fs-3 text-center" id="player">Jugador</p>
+              </div>
+              <div class="col-4">
+                <p class="fs-3 text-center" id="tiempo">100 Segundos</p>
+              </div>
+              <div class="col-4">
+                <p class="fs-3 text-center" id="points">0 Puntos</p>
+              </div>
+              <div class="col-6">
+                <p class="fs-3 text-right bg-light" id="cartas"></p>
+              </div>
+              <div class="col-6">
+                <p class="fs-3 text-center bg-light" id="bono"></p>
+              </div>
+          </div>
+         
+         
+
+
+    </div>
+
+    
+    <div class="p-5 mb-4 bg-$teal-100 rounded-3" id="Juego" style="display:block !important">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">La Generala</h1>
+        <button class="btn btn-outline-light"><a style="color: black !important;text-decoration: none !important;" href="https://github.com/ElMargaritox" target="_blank" class="col-md-8 fs-4"><i class="fab fa-github"></i>ElMargaritox</a></button>
+        <button class="btn btn-outline-light"><a style="color: black !important; text-decoration: none !important;" href="https://github.com/jonathanhuanaco" target="_blank" class="col-md-8 fs-4"><i class="fab fa-github"></i>jonathanhuanaco</a></button>
+        <div class="container-fluid">
+            <input onclick="MostrarNewGame();" class="btn btn-primary btn-lg" type="button" value="Nueva Partida">
+            <input class="btn btn-primary btn-lg" type="button" value="Como Jugar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <input onclick="MostrarOpciones();" class="btn btn-primary btn-lg" type="button" value="Opciones">
+           </div>
+      </div>
+    </div
+
+    <div class="row align-items-md-stretch"> 
+        <div class="col-md-12" id="newgame" style="display:none !important" > 
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Nueva Partida</h2>
+            <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-sm" >Jugador 1: </span>
+                <input type="text" id="name0" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-sm" >Jugador 2: </span>
+                <input type="text" id="name1" class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Jugador 3: </span>
+                <input type="text" id="name2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Jugador 4: </span>
+                <input type="text" id="name3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-default" >Apuesta Maxima: </span>
+                <input type="text" id="apuesta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+            <button class="btn btn-outline-light container" onclick="StartNewGame();" type="button">Empezar Nueva Partida</button>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-12" id="opciones" style="display:none !important" >
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2 class="text-center">Opciones</h2>
+
+            <h5 class="text-right">Tiempo Total</h5>
+
+            <div class="container mb-3">
+                <div class="form-check col-3">
+                    <input class="form-check-input" type="radio" value="600" name="flexRadioDefault1" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      600
+                    </label>
+                  </div>
+                  <div class="form-check col-3">
+                    <input class="form-check-input" type="radio" value="1200" name="flexRadioDefault1" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      1200
+                    </label>
+                  </div>
+                  <div class="form-check col-3">
+                    <input class="form-check-input" type="radio" value="1800" name="flexRadioDefault1" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      1800
+                    </label>
+                  </div>
+            </div>
+
+            <h5 class="text-right">Puntos Maximos</h5>
+
+            <div class="container mb-3">
+                <div class="form-check col-3">
+                    <input class="form-check-input" value="150" type="radio" name="flexRadioDefault2"  checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      150
+                    </label>
+                  </div>
+                  <div class="form-check col-3">
+                    <input class="form-check-input" value="200" type="radio" name="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      200
+                    </label>
+                  </div>
+                  <div class="form-check col-3">
+                    <input class="form-check-input" value="300" type="radio" name="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      300
+                    </label>
+                  </div>
+            </div>
+
+            <h5 class="text-right">Musica</h5>
+
+            <div class="row mb-3">
+
+              <div class="col-3">
+                <button type="button" onclick="sound();" class="btn btn-success">Encender</button>
+                <button type="button" onclick="nosound();" class="btn btn-danger">Apagar</button>
+              </div>
+            </div>
+            
+            
+            <button class="btn btn-outline-secondary container" onclick="AjustesCambios();" type="button">Guardar Cambios</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; Creado Por Alexis Guzman y Jonathan Huanaco
+    </footer>
+  
+</div>
+
+
+
+  
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">REGLAMENTO DE LA GENERALA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <b>INTRODUCCIÓN</b><br>
+Apuesta:la apuesta se ingresa al principio y se define por los jugadores.<br>
+Tiempo de juego: generalmente de 20 a 45 minutos, según el 
+número de participantes.<br>
+Número de jugadores: es ilimitado, pero el óptimo es de 3 a 5<br>
+Número de dados: cinco<br>
+<b>OBJETIVO DEL JUEGO</b><br>
+Lograr el máximo de puntaje o conseguir la generala.<br>
+<b>COMIENZO</b><br>
+Cada jugador tira los cinco dados para determinar el orden del 
+juego. Sale primero el que saca la suma más baja, el que 
+obtiene la suma inmediatamente superior se sienta a su 
+izquierda y así sucesivamente. El orden sigue la dirección de 
+las agujas del reloj.<br>
+<b>DESARROLLO</b><br>
+Cada jugador puede hacer hasta tres tiros por turno. 
+Hay diez vueltas por juego, excepto cuando un jugador hace 
+generala servida.<br>
+El participante debe hacer una categoría por vuelta. Por lo cual, al 
+final del juego cada jugador tendrá puntaje en cada una de las 
+diez categorías.<br>
+El jugador comienza tirando los cinco dados. Si obtiene en los 
+cinco el mismo número habrá hecho generala servida y 
+automáticamente gana el juego. Aun cuando se trate de un 
+número en el cual ya haya hecho puntaje, se computará como 
+generala servida.<br>
+<b>REGLAMENTO DE LA GENERALA</b><br>
+Después que el jugador haya completado su vuelta y anotado 
+su puntaje, pasa los dados al participante de su izquierda y el 
+juego continua.<br>
+<b>PUNTAJE</b><br>
+Para calcular el puntaje correspondiente a una 
+categoría de numero, se multiplica el total de dados donde 
+éste aparece por dicho número. Por ejemplo: tres 6 valen 18 
+puntos para el seis; dos 4 valen 8 puntos para el cuatro<br>
+<b>LOS VALORES DE LOS JUEGOS MAYORES</b><br>
+<b>Generala</b>: se forma cuando después del segundo o tercer tiro se 
+logran los cinco dados con un mismo número y vale 60 puntos. 
+Cuando esto se logra de un solo tiro, se llama generala servida y el 
+jugador automáticamente gana el juego. (Las, probabilidades en 
+contra de hacer generala servida, son de 1.295 a 1.)<br>
+Pocker: (cuatro de un mismo número). Si es servido vale 45 
+puntos, en caso contrario 40<br>
+Full: (tres de un mismo número y un par). Si es servido vale 35 
+puntos, de lo contrario 30.<br>
+Escalera: (1-2-3-4-5 o 2-3-4-5-6). Si es servida se le otorgan 25 
+puntos y si no lo es, 20<br>
+Cuando se hace generala, pocker o full, los valores que indican 
+los dados no se tienen en cuenta para el puntaje. Por ejemplo, 
+sea la generala de 1 o de 6, vale 60 puntos.<br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="error0" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Error Al Empezar La Partida</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Las Apuestas Tienen Que Ser Menores Que 1000$.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="noturnos" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ya no Tienes Turnos Disponibles</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ya no dispones de turnos, Finaliza El Turno.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ningunturno" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tienes Que Tirar Una Vez Por Lo Menos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tira los dados una vez para finalizar el turno.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ganaste" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¡VICTORIA!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="winner">Ha Ganado El Jugador {0}.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+</html>
