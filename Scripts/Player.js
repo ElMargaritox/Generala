@@ -30,7 +30,7 @@ function PasarDeTurno(){
         JugadorActual = Nombres[TurnoActual];
 
 
-        var temp2 = document.getElementById('playerturno');
+        var temp2 = document.getElementById('playerturno'); // MUESTRA EL MODAL PARA CAMBIAR LOS TURNOS
         temp2.innerText = `Turno De: ${Nombres[TurnoActual]}`;
         var myModal = new bootstrap.Modal(document.getElementById('turnoplayer'), {
             keyboard: false
