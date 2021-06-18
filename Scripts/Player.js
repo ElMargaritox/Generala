@@ -28,7 +28,16 @@ function PasarDeTurno(){
         console.log(TurnoActual);
         temp.innerText = `Turno De: ${Nombres[TurnoActual]}`;
         JugadorActual = Nombres[TurnoActual];
-        TurnoActual++;
+
+
+        var temp2 = document.getElementById('playerturno');
+        temp2.innerText = `Turno De: ${Nombres[TurnoActual]}`;
+        var myModal = new bootstrap.Modal(document.getElementById('turnoplayer'), {
+            keyboard: false
+          })
+          myModal.show();  
+
+        TurnoActual++;  
 }
 
 
@@ -59,9 +68,14 @@ function BorrarPuntos(){
 
 
 function Ganador(){
-    var temp = document.getElementById('winner');
+    var temp = document.getElementById('winner2');
     temp.innerText = `Ha Ganado El Jugador (${JugadorActual})`;
     
+    var temp2 = document.getElementById('winner3');
+    temp2.innerText = `Una Apuesta De: (${Apuesta * 4})`;
+
+    Winner();
+
     var myModal = new bootstrap.Modal(document.getElementById('ganaste'), {
         keyboard: false
       })

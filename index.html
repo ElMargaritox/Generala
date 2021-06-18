@@ -412,14 +412,16 @@ sea la generala de 1 o de 6, vale 60 puntos.<br>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p id="winner">Ha Ganado El Jugador {0}.</p>
+          <p>¡Tenemos Un Vencedor!.</p>
+            <button id="winner2" type="button" class="btn btn-danger"></button>
+            <button id="winner3" type="button" class="btn btn-danger"></button>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" onclick="ReiniciarPartida();" data-bs-dismiss="modal">Reiniciar</button>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
   <div class="modal fade" id="welcome" tabindex="-1">
     <div class="modal-dialog">
@@ -438,6 +440,23 @@ sea la generala de 1 o de 6, vale 60 puntos.<br>
     </div>
   </div>
 
+
+  <div class="modal fade" id="turnoplayer" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¡Cambio De Turno!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="playerturno" class="text-center"><b></b></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>

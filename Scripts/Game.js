@@ -23,7 +23,13 @@ face3.src="Dados/dado4.png"
 var face4=new Image()
 face4.src="Dados/dado5.png"
 var face5=new Image()
-face5.src="Dados/dado6.png" 
+face5.src="Dados/dado6.png"
+
+
+function ReiniciarPartida(){
+    location.reload();
+}
+
 function AjustesCambios(){
 
 
