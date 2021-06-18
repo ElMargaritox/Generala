@@ -1,4 +1,4 @@
-let Nombres = ["Alexis", "Jony", "Nombre2", "Nombre3"];
+let Nombres = [];
 let PuntosJugadores = [0, 0, 0, 0];
 let Apuesta; // ESTA VARIABLE NO PUEDE SER - 0 NI MAYOR QUE 1000
 let Temporizador = 600;
@@ -26,9 +26,7 @@ var face5=new Image()
 face5.src="Dados/dado6.png"
 
 
-function ReiniciarPartida(){
-    location.reload();
-}
+
 
 function AjustesCambios(){
 
@@ -50,7 +48,9 @@ function AjustesCambios(){
 }
 
 
-
+function ReiniciarPartida(){
+    location.reload();
+}
 
 function StartNewGame(){ 
     for (let index = 0; index < 4; index++) {Nombres[index] = document.getElementById('name'+index).value;}
@@ -62,7 +62,7 @@ function StartNewGame(){
         document.getElementById('newgame').style.display = 'none';
         $("#newgame").children().remove();
 
-        console.log("SE HA INICIADO UNA NUEVA PARTIDA");
+        console.log("SE HA INICIADO UNA NUEVA PARTIDA -- GENERALA");
         EmpezarJuego();
         addPlayersToTable();
     }
@@ -164,7 +164,7 @@ function DetectarJuegos(){
     // PAR DOBLE
 
     if(RepetidorNumeros() == 2){
-        console.log("PAR DOBLE");
+
         juegito.innerText = `¡Par Doble!`
         Bonos.innerText = "12 Puntos+";
         PuntosBonos = 12;
@@ -172,7 +172,7 @@ function DetectarJuegos(){
 
     // POKER
     if(RepetidorNumeros() == 4){
-        console.log("POKER");
+
         juegito.innerText = `¡Poker!`
         Bonos.innerText = "30 Puntos+";
         PuntosBonos = 30;
